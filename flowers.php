@@ -1,12 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <?php include "includes/head.php"?>
+  <?php 
+    include "includes/head.php";
+
+    $queryFlowers = "SELECT * FROM Flowers";
+    $statment = $db -> prepare($queryFlowers);
+    $statment -> execute();
+    $flowers = $statment -> fetchAll();
+    $statment -> closeCursor();
+  ?>
   <body>
     <?php include "includes/nav.php" ?>
     <main class="container">
       <div class="starter-template text-center">
-        <h1>Page 1</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Flowers</h1>
+
+        <table>
+          <tr>
+            <th>Flower</th>
+            <th>Colour</th>
+            <th>Price per stem</th>
+          </tr>
+          <?php
+            foreach($flowers as $flower){
+              echo 
+                "<tr> 
+                  <td>{$flower["name"]}</td> 
+                  <td>{$flower["color"]}</td>
+                  <td>{$flower["price_per_stem"]}</td>
+                </tr>";
+            }
+          ?>
+        </table>
       </div>
     </main><!-- /.container -->
     <?php include "includes/footer.php" ?>
