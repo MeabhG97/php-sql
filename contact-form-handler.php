@@ -1,7 +1,7 @@
 <?php
-
+    error_reporting(0);
     $errors = '';
-    $myemail = 'sebastian.gates@dkit.ie';// <-----Put your DkIT email address here.
+    $myemail = 'd00182438@student.dkit.ie';// <-----Put your DkIT email address here.
     if(empty($_POST['name'])  ||
         empty($_POST['email']) ||
         empty($_POST['message'])){
@@ -32,20 +32,21 @@
 
             mail($to,$email_subject,$email_body,$headers);
             //redirect to the 'thank you' page
-            header('Location: contact-form-thank-you.html');
+            header('Location: contact-form-thank-you.php');
     }
 ?>
 
 <!DOCTYPE HTML>
 <html>
-    <head>
-            <title>Contact form handler</title>
-    </head>
-
+    <?php include "includes/head.php" ?>
     <body>
     <!-- This page is displayed only if there is some error -->
+
         <?php
+            include "includes/nav.php";
             echo nl2br($errors);
+            include "includes/footer.php";
         ?>
+        <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
