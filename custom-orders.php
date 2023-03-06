@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
   <?php include "includes/head.php"?>
+
   <body>
     <?php include "includes/nav.php"?>
+
     <main class="container">
       <div class="starter-template text-center">
         <h1>Custom Order</h1>
-        <form method="POST" name="contactform" action="contact-form-handler.php"> 
+        <form method="POST" name="customOrder" action="custom-order-handler.php"> 
           <p>
             <label for='name'>Your Name:</label> <br>
             <input type="text" name="name">
@@ -23,7 +25,7 @@
         </form>
 
         <script language="JavaScript">
-          var frmvalidator  = new Validator("contactform");
+          var frmvalidator  = new Validator("customOrder");
           frmvalidator.addValidation("name","req","Please provide your name"); 
           frmvalidator.addValidation("email","req","Please provide your email"); 
           frmvalidator.addValidation("email","email","Please enter a valid email address"); 
