@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <?php 
+  <?php
+    require_once("database-connect.php");
     include "includes/head.php";
 
     $queryFlowers = "SELECT * FROM Flowers";

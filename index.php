@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-  <?php include "includes/head.php"?>
+  <?php 
+    require_once("database-connect.php");
+    include "includes/head.php";
+  ?>
   <body>
     <?php include "includes/nav.php" ?>  
     <main class="container">

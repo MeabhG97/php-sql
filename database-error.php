@@ -2,15 +2,11 @@
 <html>
 
 <!-- the head section -->
-<head>
-    <title>Product Manager</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-</head>
+<?php include "includes/head.php" ?>
 
 <!-- the body section -->
 <body>
-    <header><h1>Product Manager</h1></header>
-
+    <?php include "includes/nav.php" ?>
     <main>
         <h1>Database Error</h1>
         <p>There was an error connecting to the database.</p>
@@ -19,8 +15,7 @@
         <p>&nbsp;</p>
     </main>
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Product Manager, Inc.</p>
-    </footer>
+    <?php include "includes/footer.php" ?>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
