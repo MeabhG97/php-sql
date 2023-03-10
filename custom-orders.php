@@ -7,6 +7,11 @@
     <main class="container">
       <div class="starter-template text-center">
         <h1>Custom Order</h1>
+        <?php
+          if(!empty($_GET("not-sent"))){
+            echo "<div>Order not sent please try again later</div>";
+          }
+        ?>
         <form method="POST" name="customOrder" action="custom-order-handler.php">
 
           <div class="mb-3">
@@ -24,6 +29,9 @@
             <?php 
               if(!empty($_GET["email"])){
                 echo "<span>Email must not be blank</span>";
+              }
+              if(!empty($_GET["invalid"])){
+                echo "<span>Invalid Email</span>";
               }
             ?>
             <input type="text" class="form-control" id="customerEmail" name="email-add"
@@ -82,7 +90,8 @@
               }
             ?>
             <input type="text" class="form-control" id="eircode" name="address-eircode"
-              pattern="^([AC-FHKNPRTV-Y]\d{2}|D6W)\s?[0-9AC-FHKNPRTV-Y]{4}$" minlength="2"/>
+              pattern="^([AC-FHKNPRTV-Y]\d{2}|D6W)\s?[0-9AC-FHKNPRTV-Y]{4}$" minlength="2"
+              placeholder="Eircode"/>
               <span>Must be a valid Eircode using uppercase letters</span>
           </div>
 
