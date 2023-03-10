@@ -7,11 +7,7 @@
     <main class="container">
       <div class="starter-template text-center">
         <h1>Custom Order</h1>
-        <?php
-          if(!empty($_GET("not-sent"))){
-            echo "<div>Order not sent please try again later</div>";
-          }
-        ?>
+        
         <form method="POST" name="customOrder" action="custom-order-handler.php">
 
           <div class="mb-3">

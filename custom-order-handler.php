@@ -27,6 +27,10 @@
         $errors += ["order" => "empty"];
     }
 
+    if(!empty($errors)){
+        header("Location: custom-orders.php?" . http_build_query($errors, "err"));
+    }
+
     // Important: Create email headers to avoid spam folder
     $headers .= 'From: '.$myemail."\r\n".
         'Reply-To: '.$myemail."\r\n" .
@@ -35,7 +39,16 @@
 
     $name = $_POST['name'];
     $email_address = $_POST['email-add'];
-    $message = $_POST['message'];
+
+    $address += $_POST["address1"] + ",\n" 
+        + $_POST["address2"] + ",\n" 
+        + $_POST["address-town"] + ",\n"
+        + $_POST["address-county"] + ",\n"
+        + $_POST["address-eircode"] + ",\n";
+
+    $delivery = $_POST["delivery"];
+    $date = $_POST["date"];
+    $message = $_POST["order"];
 
     if (!preg_match(
         "/^(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}/i",
@@ -47,16 +60,19 @@
             $to = $myemail;
             $email_subject = "Contact form submission: $name";
             $email_body = "You have received a new message. ".
-            " Here are the details:\n Name: $name \n Email: $email_address \n Message \n $message";
+            " Here are the details:\n 
+                Name: $name \n 
+                Email: $email_address \n
+                Address: $address \n
+                Delivery: $delivery \n
+                Date Required By: $date \n
+                Order Details: $message";
             if(mail($to,$email_subject,$email_body,$headers)){
                 //redirect to the 'thank you' page
                 header('Location: custom-order-confirmation.php');
             }
             else{
-                $errors += ["not-sent" => "email"];
+                header("Location: email-not-sent.php");
             }
-    }
-    if(!empty($errors)){
-        header("Location: custom-orders.php?" . http_build_query($errors, "err"));
     }
 ?>
