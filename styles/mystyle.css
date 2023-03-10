@@ -1,1 +1,15 @@
+input:invalid{
+    border-color: red;
+}
 
+input:valid+span{
+    display: none;
+}
+
+textarea:invalid{
+    border-color: red;
+}
+
+textarea:valid+span{
+    display: none;
+}
