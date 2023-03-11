@@ -4,11 +4,11 @@
   <body>
     <?php include "includes/nav.php"?>
 
-    <main class="container">
-      <div class="starter-template text-center">
-        <h1>Custom Order</h1>
+    <main class="container-fluid pt-3">
+      <h1 class="text-center">Custom Order</h1>
+      <div class="d-grid col-8 mx-auto">
         
-        <form method="POST" name="customOrder" action="custom-order-handler.php">
+        <form method="POST" name="customOrder" action="custom-order-handler.php" class="was-validated">
 
           <div class="mb-3">
             <?php 
@@ -16,8 +16,8 @@
                 echo "<span>Name must not be blank</span>";
               }
             ?>
-            <input type="text" class="form-control" id="customerName" name="name" 
-              pattern="^[A-Za-z\s']{2,50}$" minlength="2" placeholder="Name">
+            <input type="text" class="form-control vw50" id="customerName" name="name" 
+              pattern="^[A-Za-z\s']{2,50}$" required placeholder="Name">
             <span>Must only contain 2-50 letters and whitespace</span>
           </div>
 
@@ -31,7 +31,7 @@
               }
             ?>
             <input type="text" class="form-control" id="customerEmail" name="email-add"
-              placeholder="Email" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}">
+              placeholder="Email" required pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}">
             <span>Must be a valid email address</span>
           </div>
 
@@ -42,7 +42,7 @@
               }
             ?>
             <input type="text" class="form-control" id="address1" name="address1" 
-              pattern="^[\w\s]{2,50}$" minlength="2" placeholder="Address Line 1"/>
+              pattern="^[\w\s]{2,50}$" required placeholder="Address Line 1"/>
             <span>Must only contain 2-50 letters, numbers and whitespace</span>
           </div>
 
@@ -53,7 +53,7 @@
               }
             ?>
             <input type="text" class="form-control" id="address2" name="address2" 
-              pattern="^[\w\s]{2,50}$" minlength="2" placeholder="Address Line 2"/>
+              pattern="^[\w\s]{2,50}$" required placeholder="Address Line 2"/>
             <span>Must only contain 2-50 letters, numbers and whitespace</span>
           </div>
 
@@ -64,7 +64,7 @@
               }
             ?>
             <input type="text" class="form-control" id="addressTown" name="address-town" 
-              pattern="^[A-Za-z\s']{2,50}$" minlength="2" placeholder="Town"/>
+              pattern="^[A-Za-z\s']{2,50}$" required placeholder="Town"/>
               <span>Must only contain 2-50 letters and whitespace</span>
           </div>
 
@@ -75,7 +75,7 @@
               }
             ?>
             <input type="text" class="form-control" id="addressCounty" name="address-county" 
-              pattern="^[A-Za-z\s']{2,50}$" minlength="2" placeholder="County"/>
+              pattern="^[A-Za-z\s']{2,50}$" required placeholder="County"/>
             <span>Must only contain 2-50 letters and whitespace</span>
           </div>
 
@@ -87,7 +87,7 @@
             ?>
             <input type="text" class="form-control" id="eircode" name="address-eircode"
               pattern="^([AC-FHKNPRTV-Y]\d{2}|D6W)\s?[0-9AC-FHKNPRTV-Y]{4}$" minlength="2"
-              placeholder="Eircode"/>
+              placeholder="Eircode" required/>
               <span>Must be a valid Eircode using uppercase letters</span>
           </div>
 
@@ -112,11 +112,12 @@
               }
             ?>
             <textarea class="form-control" id="orderDetails" name="order" 
-              minlength="2" maxlength="500" placeholder="Order Details" minlength="2"></textarea>
+              minlength="2" maxlength="500" placeholder="Order Details" required></textarea>
             <span>Must contain 2-500 characters</span>
           </div>
-          
-          <input type="submit" value="Submit" id="formSubmit">
+          <div class="d-grid col-6 mx-auto mb-3">
+            <input type="submit" value="Submit" id="formSubmit" class="btn btn-success btn-lg">
+          </div>
         </form>
       </div>
     </main><!-- /.container -->

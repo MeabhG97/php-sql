@@ -1,3 +1,8 @@
+body{
+    font-family: 'Macondo', cursive;
+    color: rgb(42, 51, 53);
+}
+
 input:invalid{
     border-color: red;
 }
@@ -12,4 +17,27 @@ textarea:invalid{
 
 textarea:valid+span{
     display: none;
+}
+
+main{
+    background-color: aquamarine;
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: rgb(42, 51, 53);
+}
+
+a img{
+    height: auto;
+    width: 15vw;
+}
+
+th, td{
+    color: rgb(42, 51, 53);
+}
+
+footer{
+    background-color: rgb(61, 121, 101);
+    color: azure;
 }

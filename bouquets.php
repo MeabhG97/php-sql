@@ -28,26 +28,29 @@
   
   <body>
     <?php include "includes/nav.php" ?>
-    <main class="container">
+    <main class="container-fluid vh-100 pt-3">
       <div class="starter-template text-center">
-        <h1>Bouqets</h1>
-        <table>
-          <tr>
-            <th>Bouquet</th>
-            <th>Description</th>
-            <th>Price</th>
-          </tr>
-          <?php
-            foreach($bouquets as $bouquet){
-              echo 
-                "<tr> 
-                  <td>{$bouquet["name"]}</td> 
-                  <td>{$bouquet["description"]}</td>
-                  <td>{$bouquetPrices["$bouquet[arrangement_id]"]}</td>
-                </tr>";
-            }
-          ?>
-        </table>
+        <h1 class="pt-2">Bouqets</h1>
+
+        <div class="table-responsive pt-3">
+          <table class="table table-striped table-hover table-borderless">
+            <tr>
+              <th>Bouquet</th>
+              <th>Description</th>
+              <th>Price</th>
+            </tr>
+            <?php
+              foreach($bouquets as $bouquet){
+                echo 
+                  "<tr> 
+                    <td>{$bouquet["name"]}</td> 
+                    <td>{$bouquet["description"]}</td>
+                    <td>{$bouquetPrices["$bouquet[arrangement_id]"]}</td>
+                  </tr>";
+              }
+            ?>
+          </table>
+        </div>
       </div>
     </main><!-- /.container -->
     <?php include "includes/footer.php" ?>
