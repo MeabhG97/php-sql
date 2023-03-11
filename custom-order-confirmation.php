@@ -4,10 +4,11 @@
 
 	<body>
 		<?php include "includes/nav.php" ?>
-		<main>
-		<h2>Thank you!</h2>
-			<div>
-				Thank you for ordering. We will respond as quickly as possible.
+		<main class="container-fluid vh-100 pt-5 text-center">
+			<h2>Thank you!</h2>
+			<div class="pb-3">
+				Thank you for ordering.<br/>
+				We will respond as quickly as possible.
 			</div>
 		</main>
 		<?php include "includes/footer.php" ?>

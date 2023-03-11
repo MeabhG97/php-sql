@@ -15,7 +15,7 @@
     
     <main class="container-fluid vh-100 pt-3">
       <div class="starter-template text-center">
-        <h1 class="pt-2">Flowers</h1>
+        <h2 class="pt-2">Flowers</h2>
 
         <div class="table-responsive pt-3">
           <table class="table table-striped table-hover table-borderless">

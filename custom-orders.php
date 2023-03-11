@@ -5,7 +5,7 @@
     <?php include "includes/nav.php"?>
 
     <main class="container-fluid pt-3">
-      <h1 class="text-center">Custom Order</h1>
+      <h2 class="text-center">Custom Order</h2>
       <div class="d-grid col-8 mx-auto">
         
         <form method="POST" name="customOrder" action="custom-order-handler.php" class="was-validated">

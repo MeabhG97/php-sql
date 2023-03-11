@@ -8,7 +8,7 @@
     <?php include "includes/nav.php" ?>  
     <main class="container-fluid vh-100 pt-5">
       <div class="container-fluid text-center">
-        <h1>Floral Fantasia</h1>
+        <h2>Floral Fantasia</h2>
         <p class="lead pt-3">
           Flower shop<br/>
           Please select a link from below to see our products.
