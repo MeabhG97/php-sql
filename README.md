@@ -3,9 +3,9 @@
 A simple php website with database connectivity using XAMPP.
 
 ## Contents
-*[Intro](#intro)
-*[Technologies-Used](#technologies-used)
-*[Setup](#setup)
+* [Intro](#intro)
+* [Technologies-Used](#technologies-used)
+* [Setup](#setup)
 
 ## Intro
 A website project made using primarily php.
