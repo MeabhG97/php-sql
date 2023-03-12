@@ -40,11 +40,11 @@
     $name = $_POST['name'];
     $email_address = $_POST['email-add'];
 
-    $address += $_POST["address1"] + ",\n" 
-        + $_POST["address2"] + ",\n" 
-        + $_POST["address-town"] + ",\n"
-        + $_POST["address-county"] + ",\n"
-        + $_POST["address-eircode"] + ",\n";
+    $address .= $_POST["address1"] . ",\n" 
+        . $_POST["address2"] . ",\n" 
+        . $_POST["address-town"] . ",\n"
+        . $_POST["address-county"] . ",\n"
+        . $_POST["address-eircode"] . ",\n";
 
     $delivery = $_POST["delivery"];
     $date = $_POST["date"];
